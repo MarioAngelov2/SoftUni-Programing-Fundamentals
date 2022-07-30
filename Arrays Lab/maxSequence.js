@@ -1,0 +1,20 @@
+function maxSequence (arr){
+
+    let maxSequece = [];
+
+    for (let i = 0; i < arr.length; i++){
+        currentSequence = [];
+        for (let j = i; j < arr.length; j++){
+            if (arr[i] === arr[j]){
+                currentSequence.push(arr[i])
+            } else {
+                break;
+            }
+            if (maxSequece.length < currentSequence.length){
+                maxSequece = currentSequence
+            }
+        }
+    }
+    console.log(maxSequece.join(' '))
+}
+maxSequence([2, 1, 1, 2, 3, 3, 2, 2, 2, 1])
