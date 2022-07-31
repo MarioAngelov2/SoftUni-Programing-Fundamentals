@@ -7,14 +7,11 @@ function plantDiscovery(data) {
         let [plant, rarity] = data[i].split('<->');
         rarity = Number(rarity);
 
-        plantList[plant] = { rarity, rating: [], counter: [] };
-
+        plantList[plant] = { rarity, rating: []};
     }
 
     for (let i = numberOfPlants; i < data.length; i++) {
         if (data[i] === 'Exhibition') {
-
-
             break;
         }
 
