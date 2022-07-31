@@ -1,7 +1,7 @@
 function activationKeys(data) {
 
     let rawKey = data.shift();
-    
+
     for (let line of data) {
 
         if (line === 'Generate') {
@@ -11,7 +11,7 @@ function activationKeys(data) {
         let tokens = line.split('>>>');
         let command = tokens[0];
 
-        switch(command) {
+        switch (command) {
             case 'Contains':
                 let substring = tokens[1];
                 if (rawKey.includes(substring)) {
@@ -52,24 +52,21 @@ function activationKeys(data) {
                 break;
 
             case 'Slice':
-                    let indexToStart = Number(tokens[1]);
-                    let indexToEnd = Number(tokens[2]);
+                let indexToStart = Number(tokens[1]);
+                let indexToEnd = Number(tokens[2]);
 
-                    let charactersToDelete = rawKey.substring(indexToStart, indexToEnd);
-                    rawKey = rawKey.replace(charactersToDelete, '');
-                    console.log(rawKey)
+                let charactersToDelete = rawKey.substring(indexToStart, indexToEnd);
+                rawKey = rawKey.replace(charactersToDelete, '');
+                console.log(rawKey)
                 break;
         }
-        
     }
-
     console.log(`Your activation key is: ${rawKey}`)
-
 }
 activationKeys(["abcdefghijklmnopqrstuvwxyz",
-"Slice>>>2>>>6",
-"Flip>>>Upper>>>3>>>14",
-"Flip>>>Lower>>>5>>>7",
-"Contains>>>def",
-"Contains>>>deF",
-"Generate"])
+    "Slice>>>2>>>6",
+    "Flip>>>Upper>>>3>>>14",
+    "Flip>>>Lower>>>5>>>7",
+    "Contains>>>def",
+    "Contains>>>deF",
+    "Generate"])
