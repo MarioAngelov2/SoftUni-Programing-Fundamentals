@@ -1,6 +1,6 @@
 function solve(data) {
 
-    let pattern = /\+359([ |-])2\1\d{3}\1\d{4}/g
+    let pattern = /\+359([ |-])2\1\d{3}\1\d{4}\b/g
     let phoneNumbersList = data[0];
 
     let match = pattern.exec(phoneNumbersList);
