@@ -20,7 +20,7 @@ function solve(data) {
 
     console.log(`Bought furniture:`);
     resultArr.forEach(el => console.log(el));
-    console.log(`Total money spend: ${totalSum}`)
+    console.log(`Total money spend: ${totalSum.toFixed(2)}`)
 
 }
 solve(['>>Sofa<<312.23!3',
